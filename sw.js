@@ -1,6 +1,6 @@
 // Offline cache for the standalone web build (not used on portals).
-// HTML/navigation: network-first (so updates ship immediately); static assets: cache-first.
-const CACHE = 'catalyst-cats-1790944393617';
+// HTML/navigation and unversioned files: network-first (so updates ship immediately); versioned assets: cache-first.
+const CACHE = 'catalyst-cats-1790944893977';
 self.addEventListener('install', (e) => {
   self.skipWaiting();
   e.waitUntil(caches.open(CACHE).then((c) => c.addAll(['./', './index.html'])));
@@ -22,6 +22,13 @@ self.addEventListener('fetch', (e) => {
   if (req.method !== 'GET' || url.origin !== location.origin) return;
   const isPage = req.mode === 'navigate' || url.pathname.endsWith('.html') || url.pathname.endsWith('/') || url.pathname.endsWith('.webmanifest') || url.pathname.endsWith('sw.js');
   if (isPage) {
+    e.respondWith(fetch(req).then((res) => put(req, res)).catch(() => caches.match(req)));
+    return;
+  }
+  // immutable URLs (content-hash query ?v=..., Vite-hashed bundles): cache-first; everything else (fonts, audio, ...)
+  // keeps a stable name across releases, so it is network-first with the cache only as the offline fallback
+  const immutable = url.searchParams.has('v') || /\/assets\/[^/]+-[A-Za-z0-9_-]{8}\.(js|css)$/.test(url.pathname);
+  if (!immutable) {
     e.respondWith(fetch(req).then((res) => put(req, res)).catch(() => caches.match(req)));
     return;
   }
