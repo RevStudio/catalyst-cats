@@ -1,0 +1,28 @@
+{
+ "frameWidth": 284,
+ "frameHeight": 207,
+ "frames": [
+  "move1",
+  "move2",
+  "move3",
+  "move4",
+  "move5",
+  "move6",
+  "move7",
+  "move8",
+  "attack1",
+  "attack2",
+  "attack3",
+  "hurt1",
+  "hurt2"
+ ],
+ "originX": 0.5,
+ "originY": 0.9424,
+ "contentHeight": 160.7,
+ "scale": 0.381,
+ "mesh": {
+  "tool": "rev2d",
+  "model": "art_src/rev2d/treasure_mouse/treasure_mouse.r2d.json",
+  "mode": "walker"
+ }
+}
