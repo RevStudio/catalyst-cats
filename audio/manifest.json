@@ -1,0 +1,593 @@
+{
+ "sfx": {
+  "ui_hover": {
+   "duration": 0.08,
+   "volume": 0.35,
+   "category": "ui"
+  },
+  "ui_click": {
+   "duration": 0.122,
+   "volume": 0.55,
+   "category": "ui"
+  },
+  "ui_back": {
+   "duration": 0.27,
+   "volume": 0.5,
+   "category": "ui"
+  },
+  "ui_open": {
+   "duration": 0.443,
+   "volume": 0.55,
+   "category": "ui"
+  },
+  "ui_close": {
+   "duration": 0.24,
+   "volume": 0.5,
+   "category": "ui"
+  },
+  "ui_buy": {
+   "duration": 0.665,
+   "volume": 0.7,
+   "category": "ui"
+  },
+  "ui_reroll": {
+   "duration": 0.56,
+   "volume": 0.55,
+   "category": "ui"
+  },
+  "ui_lock": {
+   "duration": 0.235,
+   "volume": 0.6,
+   "category": "ui"
+  },
+  "ui_sell": {
+   "duration": 0.535,
+   "volume": 0.65,
+   "category": "ui"
+  },
+  "ui_merge": {
+   "duration": 1.06,
+   "volume": 0.75,
+   "category": "ui"
+  },
+  "ui_error": {
+   "duration": 0.215,
+   "volume": 0.55,
+   "category": "ui"
+  },
+  "ui_select": {
+   "duration": 0.5,
+   "volume": 0.6,
+   "category": "ui"
+  },
+  "ui_toggle": {
+   "duration": 0.09,
+   "volume": 0.5,
+   "category": "ui"
+  },
+  "ui_tab": {
+   "duration": 0.1,
+   "volume": 0.4,
+   "category": "ui"
+  },
+  "ui_count": {
+   "duration": 0.06,
+   "volume": 0.3,
+   "category": "ui"
+  },
+  "cast_missile": {
+   "duration": 0.2,
+   "volume": 0.6,
+   "category": "spell"
+  },
+  "cast_star": {
+   "duration": 0.485,
+   "volume": 0.6,
+   "category": "spell"
+  },
+  "cast_paw": {
+   "duration": 0.29,
+   "volume": 0.55,
+   "category": "spell"
+  },
+  "cast_fireball": {
+   "duration": 0.5,
+   "volume": 0.7,
+   "category": "spell"
+  },
+  "hit_fire": {
+   "duration": 0.371,
+   "volume": 0.7,
+   "category": "spell"
+  },
+  "cast_blaze": {
+   "duration": 0.75,
+   "volume": 0.7,
+   "category": "spell"
+  },
+  "meteor_fall": {
+   "duration": 0.72,
+   "volume": 0.65,
+   "category": "spell"
+  },
+  "meteor_impact": {
+   "duration": 1.0,
+   "volume": 0.9,
+   "category": "spell"
+  },
+  "cast_ice": {
+   "duration": 0.36,
+   "volume": 0.6,
+   "category": "spell"
+  },
+  "cast_nova": {
+   "duration": 0.748,
+   "volume": 0.7,
+   "category": "spell"
+  },
+  "blizzard_tick": {
+   "duration": 0.16,
+   "volume": 0.35,
+   "category": "spell"
+  },
+  "cast_chain": {
+   "duration": 0.24,
+   "volume": 0.6,
+   "category": "spell"
+  },
+  "thunder": {
+   "duration": 1.33,
+   "volume": 0.9,
+   "category": "spell"
+  },
+  "spark_zap": {
+   "duration": 0.1,
+   "volume": 0.4,
+   "category": "spell"
+  },
+  "cast_dart": {
+   "duration": 0.09,
+   "volume": 0.5,
+   "category": "spell"
+  },
+  "cloud_puff": {
+   "duration": 0.34,
+   "volume": 0.55,
+   "category": "spell"
+  },
+  "thorn_burst": {
+   "duration": 0.2,
+   "volume": 0.6,
+   "category": "spell"
+  },
+  "orb_hit": {
+   "duration": 0.4,
+   "volume": 0.55,
+   "category": "spell"
+  },
+  "react_melt": {
+   "duration": 0.63,
+   "volume": 0.75,
+   "category": "reaction"
+  },
+  "react_overload": {
+   "duration": 0.95,
+   "volume": 0.95,
+   "category": "reaction"
+  },
+  "react_superconduct": {
+   "duration": 0.5,
+   "volume": 0.8,
+   "category": "reaction"
+  },
+  "react_blightfire": {
+   "duration": 0.8,
+   "volume": 0.8,
+   "category": "reaction"
+  },
+  "react_crystallize": {
+   "duration": 0.94,
+   "volume": 0.8,
+   "category": "reaction"
+  },
+  "react_catalyze": {
+   "duration": 0.9,
+   "volume": 0.8,
+   "category": "reaction"
+  },
+  "hit": {
+   "duration": 0.1,
+   "volume": 0.6,
+   "category": "combat"
+  },
+  "hit_crit": {
+   "duration": 0.16,
+   "volume": 0.75,
+   "category": "combat"
+  },
+  "enemy_die": {
+   "duration": 0.23,
+   "volume": 0.6,
+   "category": "combat"
+  },
+  "enemy_die2": {
+   "duration": 0.235,
+   "volume": 0.6,
+   "category": "combat"
+  },
+  "enemy_die_big": {
+   "duration": 0.54,
+   "volume": 0.8,
+   "category": "combat"
+  },
+  "slime_split": {
+   "duration": 0.21,
+   "volume": 0.55,
+   "category": "combat"
+  },
+  "shroom_inflate": {
+   "duration": 0.5,
+   "volume": 0.5,
+   "category": "combat"
+  },
+  "explode": {
+   "duration": 0.55,
+   "volume": 0.85,
+   "category": "combat"
+  },
+  "beetle_charge": {
+   "duration": 0.608,
+   "volume": 0.6,
+   "category": "combat"
+  },
+  "enemy_shoot": {
+   "duration": 0.15,
+   "volume": 0.45,
+   "category": "combat"
+  },
+  "spawn_warn": {
+   "duration": 0.55,
+   "volume": 0.4,
+   "category": "combat"
+  },
+  "player_hurt": {
+   "duration": 0.3,
+   "volume": 0.75,
+   "category": "combat"
+  },
+  "player_dodge": {
+   "duration": 0.24,
+   "volume": 0.5,
+   "category": "combat"
+  },
+  "player_die": {
+   "duration": 1.0,
+   "volume": 0.75,
+   "category": "combat"
+  },
+  "heal": {
+   "duration": 0.78,
+   "volume": 0.6,
+   "category": "combat"
+  },
+  "shield": {
+   "duration": 0.6,
+   "volume": 0.6,
+   "category": "combat"
+  },
+  "gem": {
+   "duration": 0.22,
+   "volume": 0.5,
+   "category": "combat"
+  },
+  "level_up": {
+   "duration": 1.4,
+   "volume": 0.85,
+   "category": "combat"
+  },
+  "chest_drop": {
+   "duration": 0.72,
+   "volume": 0.75,
+   "category": "combat"
+  },
+  "chest_shake": {
+   "duration": 0.5,
+   "volume": 0.5,
+   "category": "combat"
+  },
+  "chest_open": {
+   "duration": 1.23,
+   "volume": 0.85,
+   "category": "combat"
+  },
+  "reveal_common": {
+   "duration": 0.61,
+   "volume": 0.6,
+   "category": "combat"
+  },
+  "reveal_rare": {
+   "duration": 0.98,
+   "volume": 0.7,
+   "category": "combat"
+  },
+  "reveal_epic": {
+   "duration": 1.24,
+   "volume": 0.8,
+   "category": "combat"
+  },
+  "reveal_legendary": {
+   "duration": 2.15,
+   "volume": 0.95,
+   "category": "combat"
+  },
+  "wave_start": {
+   "duration": 1.5,
+   "volume": 0.8,
+   "category": "combat"
+  },
+  "wave_clear": {
+   "duration": 0.94,
+   "volume": 0.8,
+   "category": "combat"
+  },
+  "countdown": {
+   "duration": 0.06,
+   "volume": 0.45,
+   "category": "combat"
+  },
+  "heartbeat": {
+   "duration": 0.35,
+   "volume": 0.6,
+   "category": "combat"
+  },
+  "boss_roar": {
+   "duration": 1.5,
+   "volume": 0.9,
+   "category": "combat"
+  },
+  "boss_intro": {
+   "duration": 2.75,
+   "volume": 0.95,
+   "category": "combat"
+  },
+  "boss_die": {
+   "duration": 2.65,
+   "volume": 0.95,
+   "category": "combat"
+  },
+  "revive": {
+   "duration": 1.599,
+   "volume": 0.8,
+   "category": "combat"
+  },
+  "coin": {
+   "duration": 0.455,
+   "volume": 0.55,
+   "category": "combat"
+  },
+  "achievement": {
+   "duration": 1.54,
+   "volume": 0.85,
+   "category": "combat"
+  },
+  "freeze": {
+   "duration": 0.42,
+   "volume": 0.7,
+   "category": "combat"
+  },
+  "vacuum": {
+   "duration": 1.029,
+   "volume": 0.6,
+   "category": "combat"
+  },
+  "boss_step": {
+   "duration": 0.2,
+   "volume": 0.7,
+   "category": "combat"
+  },
+  "boss_swing": {
+   "duration": 0.32,
+   "volume": 0.65,
+   "category": "combat"
+  },
+  "boss_slam": {
+   "duration": 0.6,
+   "volume": 0.9,
+   "category": "combat"
+  },
+  "boss_windup": {
+   "duration": 0.7,
+   "volume": 0.7,
+   "category": "combat"
+  },
+  "boss_hurt": {
+   "duration": 0.24,
+   "volume": 0.55,
+   "category": "combat"
+  },
+  "telegraph_warn": {
+   "duration": 0.18,
+   "volume": 0.3,
+   "category": "combat"
+  },
+  "dash_whoosh": {
+   "duration": 0.35,
+   "volume": 0.6,
+   "category": "combat"
+  },
+  "wing_flap": {
+   "duration": 0.2,
+   "volume": 0.5,
+   "category": "combat"
+  },
+  "slime_squish": {
+   "duration": 0.22,
+   "volume": 0.55,
+   "category": "combat"
+  },
+  "crystal_crack": {
+   "duration": 0.325,
+   "volume": 0.6,
+   "category": "combat"
+  },
+  "void_hum": {
+   "duration": 0.791,
+   "volume": 0.55,
+   "category": "combat"
+  },
+  "hit_ice": {
+   "duration": 0.145,
+   "volume": 0.6,
+   "category": "spell"
+  },
+  "hit_zap": {
+   "duration": 0.12,
+   "volume": 0.55,
+   "category": "spell"
+  },
+  "hit_venom": {
+   "duration": 0.125,
+   "volume": 0.55,
+   "category": "spell"
+  },
+  "hit_arcane": {
+   "duration": 0.14,
+   "volume": 0.55,
+   "category": "spell"
+  },
+  "body_thud": {
+   "duration": 0.25,
+   "volume": 0.5,
+   "category": "combat"
+  },
+  "hat_bonk": {
+   "duration": 0.12,
+   "volume": 0.5,
+   "category": "combat"
+  },
+  "ready_ping": {
+   "duration": 0.15,
+   "volume": 0.22,
+   "category": "ui"
+  },
+  "reso_up": {
+   "duration": 1.02,
+   "volume": 0.7,
+   "category": "ui"
+  },
+  "sale_ping": {
+   "duration": 0.27,
+   "volume": 0.35,
+   "category": "ui"
+  },
+  "ui_pet": {
+   "duration": 0.47,
+   "volume": 0.55,
+   "category": "ui"
+  },
+  "quest_claim": {
+   "duration": 0.67,
+   "volume": 0.7,
+   "category": "ui"
+  },
+  "mouse_squeak": {
+   "duration": 0.11,
+   "volume": 0.45,
+   "category": "combat"
+  },
+  "coin_shower": {
+   "duration": 1.469,
+   "volume": 0.75,
+   "category": "combat"
+  },
+  "magnet_pickup": {
+   "duration": 0.75,
+   "volume": 0.65,
+   "category": "combat"
+  },
+  "boss_phase_roar": {
+   "duration": 1.25,
+   "volume": 0.9,
+   "category": "combat"
+  },
+  "wheel_roll": {
+   "duration": 1.092,
+   "volume": 0.6,
+   "category": "combat"
+  },
+  "decree_beam": {
+   "duration": 0.72,
+   "volume": 0.7,
+   "category": "combat"
+  },
+  "black_hole_loop": {
+   "duration": 3.0,
+   "volume": 0.6,
+   "category": "combat"
+  },
+  "ui_cat_swap": {
+   "duration": 0.365,
+   "volume": 0.5,
+   "category": "ui"
+  },
+  "tut_chime": {
+   "duration": 0.63,
+   "volume": 0.6,
+   "category": "ui"
+  },
+  "tut_complete": {
+   "duration": 1.38,
+   "volume": 0.8,
+   "category": "ui"
+  },
+  "tut_bubble": {
+   "duration": 0.08,
+   "volume": 0.35,
+   "category": "ui"
+  }
+ },
+ "music": {
+  "title": {
+   "duration": 65.455,
+   "loop": true,
+   "bpm": 88,
+   "volume": 0.55
+  },
+  "battle1": {
+   "duration": 61.935,
+   "loop": true,
+   "bpm": 124,
+   "volume": 0.5
+  },
+  "battle2": {
+   "duration": 56.471,
+   "loop": true,
+   "bpm": 136,
+   "volume": 0.5
+  },
+  "boss": {
+   "duration": 51.892,
+   "loop": true,
+   "bpm": 148,
+   "volume": 0.5
+  },
+  "shop": {
+   "duration": 62.609,
+   "loop": true,
+   "bpm": 92,
+   "volume": 0.5
+  },
+  "victory": {
+   "duration": 6.855,
+   "loop": false,
+   "bpm": null,
+   "volume": 0.7
+  },
+  "defeat": {
+   "duration": 5.764,
+   "loop": false,
+   "bpm": null,
+   "volume": 0.65
+  }
+ }
+}

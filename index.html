@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+    <meta name="theme-color" content="#1a1030" />
+    <meta name="description" content="Catalyst Cats — combine elemental spells, trigger reactions, and survive the void rat horde. A cute arena roguelite." />
+    <title>Catalyst Cats</title>
+    <link rel="icon" type="image/png" href="./assets/ui/app_icon_192.png" />
+    <link rel="manifest" href="./manifest.webmanifest" />
+    <style>
+      @font-face {
+        font-family: 'Jua';
+        src: url('./fonts/Jua-sub.woff2') format('woff2');
+        font-display: block;
+      }
+      /* accented Latin (ES/PT/FR/DE) comes from Fredoka under the same family name */
+      @font-face {
+        font-family: 'Jua';
+        src: url('./fonts/Fredoka-latin-ext.woff2') format('woff2');
+        unicode-range: U+00A0-017F, U+2013-2014, U+2018-201E, U+2022, U+2026, U+20AC;
+        font-display: block;
+      }
+      /* Japanese (kana/CJK/fullwidth) from M PLUS Rounded 1c under the same family name */
+      @font-face {
+        font-family: 'Jua';
+        src: url('./fonts/MPLUS-ja-sub.woff2') format('woff2');
+        unicode-range: U+3000-30FF, U+31F0-31FF, U+3400-4DBF, U+4E00-9FFF, U+FF00-FFEF;
+        font-display: block;
+      }
+      html, body {
+        margin: 0; padding: 0; width: 100%; height: 100%;
+        background: #120a22; overflow: hidden;
+        touch-action: none; user-select: none; -webkit-user-select: none;
+        -webkit-tap-highlight-color: transparent;
+      }
+      /* keep the playfield out of notches / home-indicator areas */
+      #game {
+        position: fixed; display: flex; align-items: center; justify-content: center;
+        top: env(safe-area-inset-top, 0px); right: env(safe-area-inset-right, 0px);
+        bottom: env(safe-area-inset-bottom, 0px); left: env(safe-area-inset-left, 0px);
+      }
+      #game canvas { display: block; }
+      #boot-splash {
+        position: fixed; inset: 0; display: flex; align-items: center; justify-content: center;
+        color: #f6e7ff; font: 24px 'Jua', system-ui, sans-serif; letter-spacing: 1px; pointer-events: none;
+      }
+      .cc-overlay {
+        position: fixed; inset: 0; z-index: 100000; display: none; flex-direction: column; align-items: center; justify-content: center;
+        gap: 14px; padding: 24px; text-align: center; box-sizing: border-box;
+        background: radial-gradient(ellipse at 50% 40%, #2b1d4a 0%, #120a22 75%);
+        color: #f6e7ff; font: 22px 'Jua', system-ui, sans-serif; touch-action: manipulation; user-select: none;
+      }
+      .cc-overlay.show { display: flex; }
+      .cc-overlay h1 { margin: 0; font-size: 34px; color: #ffd35a; font-weight: normal; }
+      .cc-overlay p { margin: 0; max-width: 520px; line-height: 1.35; }
+      .cc-overlay p.sub { font-size: 16px; opacity: 0.7; }
+      .cc-overlay button {
+        margin-top: 8px; padding: 12px 36px; border: 0; border-radius: 999px; cursor: pointer;
+        font: 24px 'Jua', system-ui, sans-serif; color: #2a1b3d; background: #ffd35a; box-shadow: 0 5px 0 #b8892a;
+      }
+      .cc-overlay button:active { transform: translateY(3px); box-shadow: 0 2px 0 #b8892a; }
+      #cc-rotate .phone {
+        width: 54px; height: 92px; border: 6px solid #f6e7ff; border-radius: 12px; box-sizing: border-box;
+        animation: cc-rot 2.2s ease-in-out infinite;
+      }
+      @keyframes cc-rot { 0%, 25% { transform: rotate(0); } 60%, 100% { transform: rotate(-90deg); } }
+      /* touch devices held upright: ask for landscape */
+      @media (orientation: portrait) and (pointer: coarse) { #cc-rotate { display: flex; } }
+      .fontwarm { position: absolute; left: -9999px; font-family: 'Jua'; }
+    </style>
+    <script type="module" crossorigin src="./assets/index-DAfOfZjb.js"></script>
+    <link rel="modulepreload" crossorigin href="./assets/phaser-DFK5Ua9d.js">
+  </head>
+  <body>
+    <div id="boot-splash">Catalyst Cats</div>
+    <span class="fontwarm">가A1</span>
+    <div id="game"></div>
+    <div id="cc-fail" class="cc-overlay" role="alert">
+      <h1 data-k="t">Catalyst Cats</h1>
+      <p data-k="m"></p>
+      <p class="sub" data-k="s"></p>
+      <button type="button" data-k="b"></button>
+    </div>
+    <div id="cc-rotate" class="cc-overlay" aria-live="polite">
+      <div class="phone"></div>
+      <p data-k="m"></p>
+      <p class="sub" data-k="s"></p>
+    </div>
+    <script>
+      /* Boot watchdog + failure screen (runs before the bundle, so it also covers a bundle that never loads). */
+      (function () {
+        var ko = /^ko/i.test(navigator.language || '');
+        var T = {
+          fail: ko
+            ? ['게임을 불러오지 못했어요', '네트워크 상태를 확인하고 다시 시도해 주세요.', 'We could not load the game. Please check your connection and try again.', '다시 시도']
+            : ['The game did not load', 'We could not load the game. Please check your connection and try again.', '게임을 불러오지 못했어요. 네트워크를 확인하고 다시 시도해 주세요.', 'Retry'],
+          rot: ko
+            ? [null, '기기를 가로로 돌려 주세요', 'Please rotate your device to landscape']
+            : [null, 'Please rotate your device to landscape', '기기를 가로로 돌려 주세요'],
+        };
+        function fill(id, arr) {
+          var el = document.getElementById(id);
+          if (!el) return el;
+          var set = function (k, v) { var n = el.querySelector('[data-k="' + k + '"]'); if (n && v != null) n.textContent = v; };
+          if (id === 'cc-fail') { set('t', arr[0]); set('m', arr[1]); set('s', arr[2]); set('b', arr[3]); }
+          else { set('m', arr[1]); set('s', arr[2]); }
+          return el;
+        }
+        fill('cc-rotate', T.rot);
+        var failEl = fill('cc-fail', T.fail);
+        failEl.querySelector('button').addEventListener('click', function () { location.reload(); });
+        var booted = false, failed = false, timer = 0, lastP = Date.now(), start = Date.now();
+        var dev = 'production' === 'development'; /* unbundled dev server is slow to start */
+        var STALL_MS = dev ? 120000 : 25000, HARD_MS = dev ? 600000 : 90000;
+        function fail(reason) {
+          if (booted || failed) return;
+          failed = true;
+          window.clearInterval(timer);
+          var sp = document.getElementById('boot-splash'); if (sp) sp.style.display = 'none';
+          failEl.classList.add('show');
+          try { window.__ccBootFailed = String(reason || 'boot'); if (window.__ccOnBootFail) window.__ccOnBootFail(window.__ccBootFailed); } catch (e) {}
+        }
+        timer = window.setInterval(function () {
+          var now = Date.now();
+          /* fail when nothing has progressed for 20 s (slow but advancing downloads are fine), or after a 90 s hard cap */
+          if (now - lastP > STALL_MS || now - start > HARD_MS) fail(now - start > HARD_MS ? 'timeout_hard' : 'timeout_stall');
+        }, 1000);
+        window.__ccBoot = {
+          progress: function () { lastP = Date.now(); },
+          done: function () { booted = true; window.__ccBooted = Date.now() - start; window.clearInterval(timer); },
+          fail: fail,
+        };
+        /* an exception while booting is fatal; afterwards main.ts only reports them */
+        window.addEventListener('error', function (e) { if (!booted && (!e || !e.target || e.target === window)) fail('error:' + (e && e.message)); }, true);
+        window.addEventListener('unhandledrejection', function (e) { if (!booted) { var r = e && e.reason; fail('rejection:' + (r && r.message || r)); } });
+      })();
+    </script>
+  </body>
+</html>

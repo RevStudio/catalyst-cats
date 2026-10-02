@@ -1,0 +1,31 @@
+{
+ "frameWidth": 449,
+ "frameHeight": 422,
+ "frames": [
+  "move1",
+  "move2",
+  "move3",
+  "move4",
+  "move5",
+  "move6",
+  "move7",
+  "move8",
+  "windup1",
+  "windup2",
+  "windup3",
+  "windup4",
+  "attack1",
+  "attack2",
+  "attack3",
+  "attack4"
+ ],
+ "originX": 0.5,
+ "originY": 0.9612,
+ "contentHeight": 306.0,
+ "scale": 0.8759,
+ "mesh": {
+  "tool": "rev2d",
+  "model": "art_src/rev2d/mother_slime/mother_slime.r2d.json",
+  "mode": "blob"
+ }
+}

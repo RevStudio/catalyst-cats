@@ -1,0 +1,31 @@
+{
+ "frameWidth": 515,
+ "frameHeight": 442,
+ "frames": [
+  "move1",
+  "move2",
+  "move3",
+  "move4",
+  "move5",
+  "move6",
+  "move7",
+  "move8",
+  "windup1",
+  "windup2",
+  "windup3",
+  "windup4",
+  "attack1",
+  "attack2",
+  "attack3",
+  "attack4"
+ ],
+ "originX": 0.5,
+ "originY": 0.9123,
+ "contentHeight": 306.0,
+ "scale": 0.9302,
+ "mesh": {
+  "tool": "rev2d",
+  "model": "art_src/rev2d/hex_owl/hex_owl.r2d.json",
+  "mode": "flyer"
+ }
+}

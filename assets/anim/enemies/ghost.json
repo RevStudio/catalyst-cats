@@ -1,0 +1,28 @@
+{
+ "frameWidth": 209,
+ "frameHeight": 140,
+ "frames": [
+  "move1",
+  "move2",
+  "move3",
+  "move4",
+  "move5",
+  "move6",
+  "move7",
+  "move8",
+  "attack1",
+  "attack2",
+  "attack3",
+  "hurt1",
+  "hurt2"
+ ],
+ "originX": 0.5,
+ "originY": 0.9115,
+ "contentHeight": 105.0,
+ "scale": 0.3763,
+ "mesh": {
+  "tool": "rev2d",
+  "model": "art_src/rev2d/ghost/ghost.r2d.json",
+  "mode": "flyer"
+ }
+}

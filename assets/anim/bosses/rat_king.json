@@ -1,0 +1,31 @@
+{
+ "frameWidth": 638,
+ "frameHeight": 441,
+ "frames": [
+  "move1",
+  "move2",
+  "move3",
+  "move4",
+  "move5",
+  "move6",
+  "move7",
+  "move8",
+  "windup1",
+  "windup2",
+  "windup3",
+  "windup4",
+  "attack1",
+  "attack2",
+  "attack3",
+  "attack4"
+ ],
+ "originX": 0.5,
+ "originY": 0.9618,
+ "contentHeight": 306.0,
+ "scale": 0.8802,
+ "mesh": {
+  "tool": "rev2d",
+  "model": "art_src/rev2d/rat_king/rat_king.r2d.json",
+  "mode": "walker"
+ }
+}

@@ -1,0 +1,28 @@
+{
+ "frameWidth": 213,
+ "frameHeight": 165,
+ "frames": [
+  "move1",
+  "move2",
+  "move3",
+  "move4",
+  "move5",
+  "move6",
+  "move7",
+  "move8",
+  "attack1",
+  "attack2",
+  "attack3",
+  "hurt1",
+  "hurt2"
+ ],
+ "originX": 0.5,
+ "originY": 0.933,
+ "contentHeight": 127.5,
+ "scale": 0.441,
+ "mesh": {
+  "tool": "rev2d",
+  "model": "art_src/rev2d/nest/nest.r2d.json",
+  "mode": "blob"
+ }
+}

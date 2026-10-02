@@ -1,0 +1,31 @@
+{
+ "frameWidth": 423,
+ "frameHeight": 379,
+ "frames": [
+  "move1",
+  "move2",
+  "move3",
+  "move4",
+  "move5",
+  "move6",
+  "move7",
+  "move8",
+  "windup1",
+  "windup2",
+  "windup3",
+  "windup4",
+  "attack1",
+  "attack2",
+  "attack3",
+  "attack4"
+ ],
+ "originX": 0.5,
+ "originY": 0.9587,
+ "contentHeight": 306.0,
+ "scale": 0.7982,
+ "mesh": {
+  "tool": "rev2d",
+  "model": "art_src/rev2d/crystal_golem/crystal_golem.r2d.json",
+  "mode": "walker"
+ }
+}

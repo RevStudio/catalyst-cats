@@ -1,0 +1,28 @@
+{
+ "frameWidth": 225,
+ "frameHeight": 166,
+ "frames": [
+  "move1",
+  "move2",
+  "move3",
+  "move4",
+  "move5",
+  "move6",
+  "move7",
+  "move8",
+  "attack1",
+  "attack2",
+  "attack3",
+  "hurt1",
+  "hurt2"
+ ],
+ "originX": 0.5,
+ "originY": 0.9351,
+ "contentHeight": 127.5,
+ "scale": 0.4503,
+ "mesh": {
+  "tool": "rev2d",
+  "model": "art_src/rev2d/knight/knight.r2d.json",
+  "mode": "walker"
+ }
+}
