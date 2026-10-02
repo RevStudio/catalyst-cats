@@ -1,6 +1,6 @@
 // Offline cache for the standalone web build (not used on portals).
 // HTML/navigation: network-first (so updates ship immediately); static assets: cache-first.
-const CACHE = 'catalyst-cats-1790908903374';
+const CACHE = 'catalyst-cats-1790921277020';
 self.addEventListener('install', (e) => {
   self.skipWaiting();
   e.waitUntil(caches.open(CACHE).then((c) => c.addAll(['./', './index.html'])));
