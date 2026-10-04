@@ -1,0 +1,13 @@
+{
+  "rev": 1,
+  "minVersion": "1.0.0",
+  "storeUrl": "",
+  "flags": { "pass": true, "piggy": true, "firstBuy": true, "cheerAd": true },
+  "economy": {
+    "adRewards": { "stardust": { "amount": 50, "perDay": 5 }, "moonstone": { "amount": 5, "perDay": 3 } },
+    "pass": { "daily": 40, "stardustPct": 20 },
+    "piggy": { "perWave": 3, "perBoss": 5, "perWin": 20, "cap": 600, "minBreak": 200 },
+    "cheer": [{ "streak": 2, "hp": 10, "dmg": 8 }, { "streak": 4, "hp": 20, "dmg": 15 }]
+  },
+  "news": null
+}

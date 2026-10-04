@@ -1,6 +1,6 @@
 // Offline cache for the standalone web build (not used on portals).
 // HTML/navigation and unversioned files: network-first (so updates ship immediately); versioned assets: cache-first.
-const CACHE = 'catalyst-cats-1791020673034';
+const CACHE = 'catalyst-cats-1791100880592';
 self.addEventListener('install', (e) => {
   self.skipWaiting();
   e.waitUntil(caches.open(CACHE).then((c) => c.addAll(['./', './index.html'])));
@@ -22,6 +22,8 @@ self.addEventListener('fetch', (e) => {
   const req = e.request;
   const url = new URL(req.url);
   if (req.method !== 'GET' || url.origin !== location.origin) return;
+  // live files (update check, remote config) always come straight from the network and are never cached
+  if (url.pathname.endsWith('/version.json') || url.pathname.endsWith('/remote-config.json')) return;
   const isPage = req.mode === 'navigate' || url.pathname.endsWith('.html') || url.pathname.endsWith('/') || url.pathname.endsWith('.webmanifest') || url.pathname.endsWith('sw.js');
   if (isPage) {
     e.respondWith(fresh(req).then((res) => put(req, res)).catch(() => caches.match(req)));
