@@ -21,7 +21,7 @@
 <li>진행도·재화·설정·보유 상태는 기기에 저장합니다. 이 Android 앱은 자체 회원가입이나 Firebase 계정, 클라우드 진행도 백업 및 데이터 이전 코드를 제공하지 않습니다.</li>
 <li>앱이 만든 지속적인 무작위 플레이어 식별자를 RevenueCat의 App User ID로 사용합니다. 이름이나 이메일로 만든 값은 아니지만 구매 이력과 연결되는 가명 식별자이므로 개인정보가 전혀 없다는 의미는 아닙니다.</li>
 <li>구매 상품·거래 시각·영수증 또는 거래 정보와 구매·복원 결과를 Google Play 및 RevenueCat이 처리합니다. RevStudio 앱은 카드 번호나 은행 계좌 정보를 직접 받지 않습니다. 구매 확인, 권한 복원, 구매 관련 분석 및 부정 이용 방지에 사용합니다.</li>
-<li>Google AdMob과 UMP 동의 관리 SDK는 광고 및 동의 처리를 위해 IP 주소와 대략적인 위치, 기기·광고 식별자, 광고·제품 상호작용, 충돌·성능·기타 진단 정보를 처리할 수 있습니다. 광고 제공·측정, 분석, 서비스 기능 및 오류 대응에 이용됩니다. 광고 식별자와 일부 광고 관련 정보는 허용된 범위에서 다른 앱·사이트의 정보와 결합될 수 있습니다.</li>
+<li>Google AdMob과 UMP 동의 관리 SDK는 광고 및 동의 처리를 위해 IP 주소와 대략적인 위치, 기기·광고 식별자, 광고·제품 상호작용, 성능·기타 진단 정보를 처리할 수 있습니다. 광고 제공·측정, 분석, 서비스 기능 및 오류 대응에 이용됩니다. 광고 식별자와 일부 광고 관련 정보는 허용된 범위에서 다른 앱·사이트의 정보와 결합될 수 있습니다.</li>
 <li>이 Android 구성에는 Firebase Analytics·Crashlytics·Firestore·Authentication이 없으며, 운영자 자체 통계 전송 URL도 설정되어 있지 않습니다. 이는 광고·결제 SDK의 정보 처리가 없다는 뜻은 아닙니다.</li>
 <li>지원 문의를 보내면 이용자가 제공한 이메일, 문의 내용과 문제 해결에 필요한 정보를 처리합니다. 비밀번호, 인증 코드, 카드 번호 등은 보내지 마세요.</li>
 </ul>
@@ -45,7 +45,7 @@
 <h2>2. Information handled</h2>
 <p>Progress, currencies, settings and ownership state are stored on the device. This Android app has no registration, Firebase account, operator cloud-progress backup or transfer code. A persistent randomly generated player identifier is sent to RevenueCat as the App User ID. Although it is not generated from a name or email, it is a pseudonymous identifier linked to purchase history, not a guarantee that no personal data exists.</p>
 <p>Google Play and RevenueCat process products, transaction dates, receipt or transaction information, and purchase/restore results for purchase validation, entitlements, purchase-related analytics and abuse prevention. The app does not directly receive card or bank-account details.</p>
-<p>Google AdMob and the UMP consent-management SDK may process IP-derived approximate location, device/advertising identifiers, advertising/product interactions, crashes, performance and other diagnostics for advertising, measurement, analytics and service operation. Where permitted, advertising identifiers and some advertising-related data may be combined with information from other apps or websites.</p>
+<p>Google AdMob and the UMP consent-management SDK may process IP-derived approximate location, device/advertising identifiers, advertising/product interactions, performance and other diagnostics for advertising, measurement, analytics and service operation. Where permitted, advertising identifiers and some advertising-related data may be combined with information from other apps or websites.</p>
 <p>This Android configuration does not include Firebase Analytics, Crashlytics, Firestore or Authentication, and no operator analytics endpoint is configured. Advertising and billing SDKs may nevertheless process data. Support requests contain the email, message and troubleshooting information you choose to provide. Do not send passwords, verification codes or card numbers.</p>
 <h2>3. Choices</h2>
 <p>Ad requests proceed only when permitted by the consent SDK. Ad consent is requested where required. Available choices can be changed through the game's ad-privacy settings and the Android device or Google settings that apply to advertising identifiers and ad privacy. Denial, advertising-identifier choices or an SDK error may limit or prevent ads; these choices do not guarantee that non-personalised ads will always be served. Core gameplay is separate from optional advertising.</p>
