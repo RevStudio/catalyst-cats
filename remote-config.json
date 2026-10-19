@@ -1,5 +1,6 @@
 {
-  "rev": 1,
+  "rev": 2,
+  "minBuild": { "android": 10213 },
   "minVersion": "1.0.0",
   "storeUrl": "",
   "flags": { "pass": true, "piggy": true, "firstBuy": true, "cheerAd": true },
